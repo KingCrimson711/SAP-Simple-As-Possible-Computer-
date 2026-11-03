@@ -2,7 +2,17 @@
 
 A tiny 8-bit computer written in synthesizable Verilog/SystemVerilog. It has a program counter, memory, two registers, an ALU, an instruction register, a control unit and a hex display, all connected by one shared bus. It is built to be read and understood, not to be fast or powerful.
 
-The design follows the SAP ("Simple-As-Possible") computer architecture, which is a teaching architecture for learning how a CPU works from the inside.
+The design follows the SAP ("Simple-As-Possible") computer architecture, which is a teaching architecture for learning how a CPU works from the inside. 
+
+## Timing Constraints
+
+The design is constrained to a 100 MHz clock frequency using Vivado Design Suite 2026.1. A 10 ns clock period is specified in the Xilinx Design Constraints (XDC) file to establish the timing requirements for synthesis and implementation.
+
+```tcl
+create_clock -name clk -period 10.000 [get_ports clk]
+```
+
+Post-implementation timing analysis is performed to evaluate setup timing, slack, and critical paths on the target AMD Versal V80 FPGA.
 
 ## Features
 
