@@ -158,7 +158,7 @@ Modules are connected by position, for example `alu alu1(a, b, alu_out, sub, fla
 
 The design passes RTL synthesis. The RTL schematic is shown below.
 
-![RTL schematic](rtl.png)
+![RTL schematic](Sch_SAP.png)
 
 Notes:
 
